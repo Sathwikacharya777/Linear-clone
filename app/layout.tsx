@@ -3,7 +3,7 @@ import "./globals.css";
 import Navbar from "./components/Navbar"; // Adjust path if needed
 
 export const metadata: Metadata = {
-  title: "Linear-Clone Circuits | Engineering Innovation",
+  title: "Linear-Clone",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
