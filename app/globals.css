@@ -1,26 +1,73 @@
 @import "tailwindcss";
 
+@theme {
+  --color-background: #000212;
+  --color-indigo-linear: #5e6ad2;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #000212;
+  --foreground: #ffffff;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+/* 3D PERSPECTIVE SYSTEM */
+.hero-container {
+  perspective: 1200px;
+}
+
+.cube {
+  width: 250px;
+  height: 250px;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: rotateCube 20s infinite linear;
+}
+
+.face {
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  background: rgba(2, 6, 23, 0.8);
+  border: 1px solid rgba(94, 106, 210, 0.3);
+  /* This creates the "Circuit Grid" look on the cube */
+  background-image: 
+    radial-gradient(circle at 2px 2px, rgba(94, 106, 210, 0.2) 1px, transparent 0);
+  background-size: 20px 20px;
+  backdrop-filter: blur(4px);
+}
+
+/* Face Positions */
+.front  { transform: translateZ(125px); }
+.back   { transform: rotateY(180deg) translateZ(125px); }
+.right  { transform: rotateY(90deg) translateZ(125px); }
+.left   { transform: rotateY(-90deg) translateZ(125px); }
+.top    { transform: rotateX(90deg) translateZ(125px); }
+.bottom { transform: rotateX(-90deg) translateZ(125px); }
+
+@keyframes rotateCube {
+  0% { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
+  100% { transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg); }
+}
+
+.text-gradient {
+  background: linear-gradient(to bottom, #ffffff 30%, rgba(255, 255, 255, 0.4) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
