@@ -83,7 +83,7 @@ export default function Footer() {
         {/* Bottom Line */}
         <div className="mt-24 pt-8 border-t border-white/[0.03] flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-[11px] text-zinc-600 font-medium uppercase tracking-widest">
-            © 2026 Linear-Clone Circuits Inc. All rights reserved.
+            © 2026 Linear-Clone Inc. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
             <div className="w-2 h-2 rounded-full bg-green-500/50 shadow-[0_0_8px_rgba(34,197,94,0.4)]" />
