@@ -7,6 +7,7 @@ import {
 import ProductPlanning from "../components/ProductPlanning";
 import ProductProgress from "../components/ProductProgress";
 import ProductGrid from "../components/ProductGrid";
+import PricingPage from "../components/pricing";  
 import Footer from "../components/Footer";
 
 // The high-end engineering icons
@@ -78,9 +79,10 @@ export default function ProductPage() {
       <ProductPlanning />
       <ProductProgress />
       <ProductGrid />
+      <PricingPage />
       
       {/* FULL WIDTH FOOTER */}
-      <Footer />
+      {/* <Footer /> */}
 
     </main>
   );
